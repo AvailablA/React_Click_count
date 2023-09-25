@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import{useState} from 'react'
+import './index.css';
+import Time from './Time';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const App = () =>
+{
+const state = useState();
+// console.log(useState) useState return two think object and function
+const [count,setCount] = useState(0);//intial value count is intial
+// let count = 1;
+const Count = ()=> 
+{
+  setCount(count+1);//setCount is current value
+  // console.log("Clicked "+ count++);
+  
+}
+
+  return(
+  <>
+    <h1> {count} </h1>
+    <button onClick={Count}>Total Click</button>  
+    <div>
+      <Time/>
     </div>
-  );
+  </>)
 }
 
 export default App;
